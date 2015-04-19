@@ -1,5 +1,9 @@
 package es.unizar.tmdad.lab2.configuration;
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -10,6 +14,11 @@ import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
 import org.springframework.integration.dsl.IntegrationFlows;
 import org.springframework.social.twitter.api.StreamListener;
+import org.springframework.social.twitter.api.Tweet;
+
+import es.unizar.tmdad.lab2.domain.MyTweet;
+import es.unizar.tmdad.lab2.domain.TargetedTweet;
+import es.unizar.tmdad.lab2.service.TwitterLookupService;
 
 @Configuration
 @EnableIntegration
